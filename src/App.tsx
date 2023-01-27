@@ -1,6 +1,7 @@
-import { Outlet, Link } from "react-router-dom";
+import { Outlet } from "react-router-dom";
 
 import "./App.css";
+import Navigation from "./navigation";
 
 function App() {
   return (
@@ -10,18 +11,7 @@ function App() {
       </header>
       <div className="columns">
         <nav>
-          <h2>NAVIGATION</h2>
-          <ul>
-            <li>
-              <Link to="progress-bar">Progress Bar</Link>
-            </li>
-            <li>
-              <Link to="accordion">Accordion</Link>
-            </li>
-            <li>
-              <Link to="button">Button</Link>
-            </li>
-          </ul>
+          <Navigation />
         </nav>
         <main>
           <h2>MAIN CONTENT</h2>
