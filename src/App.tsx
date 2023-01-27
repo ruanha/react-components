@@ -1,4 +1,5 @@
 import { useState, MouseEvent } from "react";
+import { Outlet, Link } from "react-router-dom";
 
 import "./App.css";
 
@@ -22,25 +23,25 @@ function App() {
           <h2>NAVIGATION</h2>
           <ul>
             <li>
-              <a href="#progress-bar" onClick={handleComponentClick}>
+              <Link to="progress-bar" onClick={handleComponentClick}>
                 Progress Bar
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="#accordion" onClick={handleComponentClick}>
+              <Link to="accordion" onClick={handleComponentClick}>
                 Accordion
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="#button" onClick={handleComponentClick}>
+              <Link to="button" onClick={handleComponentClick}>
                 Button
-              </a>
+              </Link>
             </li>
           </ul>
         </nav>
         <main>
           <h2>MAIN CONTENT</h2>
-          {selectedComponent}
+          <Outlet />
         </main>
         <aside>
           <h2>ASIDE</h2>
