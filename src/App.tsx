@@ -41,10 +41,11 @@ function App() {
         </nav>
         <main>
           <h2>MAIN CONTENT</h2>
-          <Outlet />
+          <Outlet context={"main"} />
         </main>
         <aside>
           <h2>ASIDE</h2>
+          <Outlet context={"aside"} />
         </aside>
       </div>
       <script src="src/index.js"></script>

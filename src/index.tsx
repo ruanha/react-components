@@ -4,6 +4,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
+import Component from "./component";
 
 const router = createBrowserRouter([
   {
@@ -12,15 +13,15 @@ const router = createBrowserRouter([
     children: [
       {
         path: "progress-bar",
-        element: <div>Progress Bar</div>,
+        element: <Component componentId="progress-bar" />,
       },
       {
         path: "accordion",
-        element: <div>Accordion</div>,
+        element: <Component componentId="accordion" />,
       },
       {
         path: "button",
-        element: <div>Button</div>,
+        element: <Component componentId="button" />,
       },
     ],
   },
