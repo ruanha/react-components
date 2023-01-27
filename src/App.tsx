@@ -1,18 +1,8 @@
-import { useState, MouseEvent } from "react";
 import { Outlet, Link } from "react-router-dom";
 
 import "./App.css";
 
 function App() {
-  const [selectedComponent, setSelectedComponent] = useState("");
-
-  const handleComponentClick = (event: MouseEvent<HTMLAnchorElement>) => {
-    const component = event.currentTarget
-      .getAttribute("href")
-      ?.replace("#", "");
-    setSelectedComponent(component ?? "");
-  };
-
   return (
     <div className="app">
       <header>
@@ -23,19 +13,13 @@ function App() {
           <h2>NAVIGATION</h2>
           <ul>
             <li>
-              <Link to="progress-bar" onClick={handleComponentClick}>
-                Progress Bar
-              </Link>
+              <Link to="progress-bar">Progress Bar</Link>
             </li>
             <li>
-              <Link to="accordion" onClick={handleComponentClick}>
-                Accordion
-              </Link>
+              <Link to="accordion">Accordion</Link>
             </li>
             <li>
-              <Link to="button" onClick={handleComponentClick}>
-                Button
-              </Link>
+              <Link to="button">Button</Link>
             </li>
           </ul>
         </nav>
