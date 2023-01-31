@@ -101,7 +101,7 @@ function mockFetch(_url: string, _options: any): Promise<any> {
         });
       } else {
         reject({
-          error: "Something went wrong",
+          error: "Something went wrong, try again!",
         });
       }
     }, 1000);
