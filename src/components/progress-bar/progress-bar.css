@@ -5,13 +5,13 @@
   height: 20px;
   overflow: hidden;
   margin: 1rem 0;
+  text-align: center;
 }
 
 .progress {
   background-color: #007bff;
   color: rgb(233, 236, 239);
   font-size: small;
-  text-align: center;
   height: 100%;
   overflow: hidden;
 }

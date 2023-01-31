@@ -1,9 +1,20 @@
 import SyntaxHighlighter from "react-syntax-highlighter";
 import { dracula } from "react-syntax-highlighter/dist/esm/styles/hljs";
 
+import logo from "./github-mark.svg";
+
 export default function ProgressBarInfo() {
   return (
     <div className="prose">
+      <a href="https://github.com/ruanha/react-components/tree/main/src/components/progress-bar">
+        <img
+          src={logo}
+          style={{ width: "1rem" }}
+          className="github-logo"
+          alt="github logo"
+        />{" "}
+        Progress bar code
+      </a>
       <h3>Requirements</h3>
       {
         <ul>
