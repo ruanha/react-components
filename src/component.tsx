@@ -3,7 +3,7 @@ import AccordionInfo from "./components-info/accordion";
 import ProgressBar from "./components/progress-bar/progress-bar";
 import ProgressBarInfo from "./components-info/progress-bar";
 import LikeButton from "./components/like-button/like-button";
-import ButtonInfo from "./components-info/button";
+import LikeButtonInfo from "./components-info/like-button";
 import { useOutletContext } from "react-router-dom";
 
 export default function Component({ componentId }: props) {
@@ -56,7 +56,7 @@ export default function Component({ componentId }: props) {
       return outlet === "main" ? (
         <LikeButton url="mock/api/like" requestApi={mockFetch} />
       ) : (
-        <ButtonInfo />
+        <LikeButtonInfo />
       );
     default:
       return <h1>NO COMPONENT SELECTED</h1>;
