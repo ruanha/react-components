@@ -40,10 +40,12 @@ const info = {
   description:
     "A simple like button component that takes in a url and a requestApi function and displays a like button.",
   requirements: [
-    "It should be possible to set the url and requestApi function, which should be used to make a POST request to the url.",
+    "It should be possible to set the url, liked status, and requestApi function.",
+    "The requestApi function should be called with the url and the liked status when the button is clicked.",
     "By default the button should be unliked.",
     "It should be possible to like and unlike the button.",
     "It should be visually clear if the request is pending.",
+    "It should be visually clear if the request has failed.",
   ],
 };
 

@@ -54,7 +54,17 @@ export default function Component({ componentId }: props) {
       );
     case "button":
       return outlet === "main" ? (
-        <LikeButton url="mock/api/like" requestApi={mockFetch} />
+        <>
+          <h3>Not liked</h3>
+          <p>Try to hover and click the buttons</p>
+          <LikeButton url="mock/api/like" requestApi={mockFetch} />
+          <h3>Liked</h3>
+          <LikeButton
+            url="mock/api/like"
+            requestApi={mockFetch}
+            initialLikedState={true}
+          />
+        </>
       ) : (
         <LikeButtonInfo />
       );

@@ -6,11 +6,13 @@ import "./like-button.css";
 export default function LikeButton({
   url,
   requestApi = fetch,
+  initialLikedState = false,
 }: {
   url: string;
   requestApi?: (url: string, options: any) => Promise<any>;
+  initialLikedState?: boolean;
 }) {
-  const [isLiked, setIsLiked] = useState(false);
+  const [isLiked, setIsLiked] = useState(initialLikedState);
   const [isLoading, setIsLoading] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
 
