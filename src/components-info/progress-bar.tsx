@@ -1,7 +1,7 @@
 export default function ProgressBarInfo() {
   return (
     <div className="prose">
-      <h2>Requirements</h2>
+      <h3>Requirements</h3>
       {
         <ul>
           {info.requirements.map((requirement, index) => (
@@ -9,8 +9,8 @@ export default function ProgressBarInfo() {
           ))}
         </ul>
       }
-      <h2>Notes</h2>
-      <h3>HTML &lt;progress&gt; tag</h3>
+      <h3>Notes</h3>
+      <h4>HTML &lt;progress&gt; tag</h4>
       <p>
         fun fact, the html standard has a tag for a{" "}
         <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/progress">
