@@ -1,5 +1,7 @@
 import { useState } from "react";
 
+import "./accordion.css";
+
 function Section({ title, text }: section) {
   const [isActive, setIsActive] = useState(false);
 
