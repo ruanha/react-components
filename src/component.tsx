@@ -2,7 +2,7 @@ import Accordion from "./components/accordion/accordion";
 import AccordionInfo from "./components-info/accordion";
 import ProgressBar from "./components/progress-bar/progress-bar";
 import ProgressBarInfo from "./components-info/progress-bar";
-import Button from "./components/button/button";
+import LikeButton from "./components/like-button/like-button";
 import ButtonInfo from "./components-info/button";
 import { useOutletContext } from "react-router-dom";
 
@@ -53,7 +53,11 @@ export default function Component({ componentId }: props) {
         <ProgressBarInfo />
       );
     case "button":
-      return outlet === "main" ? <Button /> : <ButtonInfo />;
+      return outlet === "main" ? (
+        <LikeButton url="mock/api/like" requestApi={mockFetch} />
+      ) : (
+        <ButtonInfo />
+      );
     default:
       return <h1>NO COMPONENT SELECTED</h1>;
   }
@@ -77,3 +81,19 @@ const accordianSections = [
     text: "JavaScript, often abbreviated as JS, is a programming language that is one of the core technologies of the World Wide Web, alongside HTML and CSS.",
   },
 ];
+
+function mockFetch(_url: string, _options: any): Promise<any> {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      if (Math.random() > 0.5) {
+        resolve({
+          ok: true,
+        });
+      } else {
+        reject({
+          error: "Something went wrong",
+        });
+      }
+    }, 1000);
+  });
+}
