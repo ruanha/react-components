@@ -45,7 +45,6 @@ main {
   overflow-y: scroll;
   border-left: 1px solid var(--gray);
   border-right: 1px solid var(--gray);
-  text-align: center;
 }
 
 @media (max-width: 900px) {
