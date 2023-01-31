@@ -11,7 +11,6 @@ function App() {
       </header>
       <div className="columns">
         <nav>
-          <h2>NAVIGATION</h2>
           <Navigation />
         </nav>
         <main>

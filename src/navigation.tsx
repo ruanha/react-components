@@ -1,21 +1,26 @@
 import { Link } from "react-router-dom";
 
-import "./navigation.css";
-
 export default function Navigation() {
   return (
     <>
-      <ul>
-        <li>
-          <Link to="progress-bar">Progress Bar</Link>
-        </li>
-        <li>
-          <Link to="accordion">Accordion</Link>
-        </li>
-        <li>
-          <Link to="button">Button</Link>
-        </li>
-      </ul>
+      <Link
+        style={{ display: "inline-block", margin: "0 1rem 0.5rem" }}
+        to="progress-bar"
+      >
+        Progress-Bar
+      </Link>
+      <Link
+        style={{ display: "inline-block", margin: "0 1rem 0.5rem" }}
+        to="accordion"
+      >
+        Accordion
+      </Link>
+      <Link
+        style={{ display: "inline-block", margin: "0 1rem 0.5rem" }}
+        to="button"
+      >
+        Button
+      </Link>
     </>
   );
 }
