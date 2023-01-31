@@ -1,6 +1,6 @@
 import Accordion from "./components/accordion/accordion";
 import AccordionInfo from "./components-info/accordion";
-import ProgressBarExample from "./components-examples/progress-bar";
+import ProgressBar from "./components/progress-bar/progress-bar";
 import ProgressBarInfo from "./components-info/progress-bar";
 import Button from "./components/button/button";
 import ButtonInfo from "./components-info/button";
@@ -17,7 +17,41 @@ export default function Component({ componentId }: props) {
         <AccordionInfo />
       );
     case "progress-bar":
-      return outlet === "main" ? <ProgressBarExample /> : <ProgressBarInfo />;
+      return outlet === "main" ? (
+        <>
+          <h3>Default style</h3>
+          <ProgressBar percent={0} />
+          <ProgressBar percent={1} />
+          <ProgressBar percent={5} />
+          <ProgressBar percent={25} />
+          <ProgressBar percent={50} />
+          <ProgressBar percent={100} />
+          <h3>Custom style examples</h3>
+          <ProgressBar
+            percent={50}
+            style={{
+              bar: {
+                background:
+                  "repeating-linear-gradient(45deg, #606dbc, #606dbc 10px, #465298 10px,#465298 20px)",
+                color: "white",
+              },
+              container: { backgroundColor: "lightblue" },
+            }}
+          />
+          <ProgressBar
+            percent={33}
+            style={{
+              bar: {
+                backgroundColor: "red",
+                color: "red",
+              },
+              container: { border: "none", height: "5px" },
+            }}
+          />
+        </>
+      ) : (
+        <ProgressBarInfo />
+      );
     case "button":
       return outlet === "main" ? <Button /> : <ButtonInfo />;
     default:
