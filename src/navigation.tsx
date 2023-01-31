@@ -5,7 +5,6 @@ import "./navigation.css";
 export default function Navigation() {
   return (
     <>
-      <h2>NAVIGATION</h2>
       <ul>
         <li>
           <Link to="progress-bar">Progress Bar</Link>

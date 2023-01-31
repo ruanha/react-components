@@ -11,14 +11,15 @@ function App() {
       </header>
       <div className="columns">
         <nav>
+          <h2>NAVIGATION</h2>
           <Navigation />
         </nav>
         <main>
-          <h2>MAIN CONTENT</h2>
+          <h2>COMPONENT</h2>
           <Outlet context={"main"} />
         </main>
         <aside>
-          <h2>ASIDE</h2>
+          <h2>NOTES</h2>
           <Outlet context={"aside"} />
         </aside>
       </div>
