@@ -25,23 +25,21 @@ header {
 }
 
 nav {
-  max-width: 200px;
+  flex: 0 1 100px;
 }
 
-nav,
-aside,
-main {
-  flex: 0 1 auto;
+aside {
+  flex: 0 1 300px;
 }
 
 nav,
 aside {
-  flex: 0 1 300px;
   padding: 1rem;
   background-color: var(--white);
 }
 
 main {
+  flex: 0 1 600px;
   background-color: var(--white);
   height: calc(100vh - var(--header-height));
   overflow-y: scroll;
