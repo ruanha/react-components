@@ -12,7 +12,8 @@ afterEach(() => {
 test("renders Like button in unliked state as default", () => {
   render(<LikeButton url={url} requestApi={mockFetch} />);
   const buttonElement = screen.getByRole("button");
-  expect(buttonElement).toHaveTextContent("Like");
+  expect(buttonElement).toHaveTextContent(/^Like$/);
+  expect(buttonElement).not.toHaveTextContent(/^Liked$/);
 });
 
 test("renders a Liked button when fetch is successful", async () => {
@@ -21,10 +22,25 @@ test("renders a Liked button when fetch is successful", async () => {
   const buttonElement = screen.getByRole("button");
 
   // act
-  userEvent.click(buttonElement);
+  await userEvent.click(buttonElement);
 
   // assert
-  await waitFor(() => expect(buttonElement).toHaveTextContent("Liked"));
+  await waitFor(() => expect(buttonElement).toHaveTextContent(/^Liked$/));
+});
+
+test("Like button toggles between Like and Liked", async () => {
+  // arrange
+  render(<LikeButton url={url} requestApi={mockFetch} />);
+  const buttonElement = screen.getByRole("button");
+
+  // act
+  await userEvent.click(buttonElement);
+  await userEvent.click(buttonElement);
+
+  // assert
+  expect.assertions(2);
+  await waitFor(() => expect(buttonElement).toHaveTextContent(/^Like$/));
+  expect(buttonElement).not.toHaveTextContent(/^Liked$/);
 });
 
 async function mockFetch(_url: string, _options: any): Promise<any> {
