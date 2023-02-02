@@ -49,5 +49,5 @@ const info = {
   ],
 };
 
-const codeExample_1 = `/* Example of use of accordion component */
+const codeExample_1 = `/* Example of use of like-button component */
 <LikeButton url="mock/api/like" requestApi={mockFetch} />`;
