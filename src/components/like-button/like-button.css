@@ -5,6 +5,7 @@ button {
   padding: 0.6rem;
   font-size: 1.2rem;
   font-weight: bold;
+  cursor: pointer;
 }
 
 button.liked {
