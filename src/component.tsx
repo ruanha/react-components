@@ -55,15 +55,11 @@ export default function Component({ componentId }: props) {
     case "button":
       return outlet === "main" ? (
         <>
-          <h3>Not liked</h3>
+          <h3>Like Button</h3>
           <p>Try to hover and click the buttons</p>
           <LikeButton url="mock/api/like" requestApi={mockFetch} />
-          <h3>Liked</h3>
-          <LikeButton
-            url="mock/api/like"
-            requestApi={mockFetch}
-            initialLikedState={true}
-          />
+          <h3>Connection/Server error</h3>
+          <LikeButton url="mock/api/like" requestApi={mockFetchFail} />
         </>
       ) : (
         <LikeButtonInfo />
@@ -92,18 +88,20 @@ const accordianSections = [
   },
 ];
 
-function mockFetch(_url: string, _options: any): Promise<any> {
-  return new Promise((resolve, reject) => {
+async function mockFetch(_url: string, _options: any): Promise<any> {
+  return new Promise((resolve, _reject) => {
+    resolve({
+      ok: true,
+    });
+  });
+}
+
+function mockFetchFail(_url: string, _options: any): Promise<any> {
+  return new Promise((_resolve, reject) => {
     setTimeout(() => {
-      if (Math.random() > 0.5) {
-        resolve({
-          ok: true,
-        });
-      } else {
-        reject({
-          error: "Something went wrong, try again!",
-        });
-      }
+      reject({
+        error: "Something went wrong, try again!",
+      });
     }, 1000);
   });
 }
