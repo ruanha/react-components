@@ -6,6 +6,7 @@ import LikeButton from "./components/like-button/like-button";
 import LikeButtonInfo from "./components-info/like-button";
 import { useOutletContext } from "react-router-dom";
 import Tabs from "./components/tabs/tabs";
+import TabsInfo from "./components-info/tabs";
 
 export default function Component({ componentId }: props) {
   const outlet = useOutletContext();
@@ -66,7 +67,14 @@ export default function Component({ componentId }: props) {
         <LikeButtonInfo />
       );
     case "tabs":
-      return <Tabs defaultValue="HTML" tabs={accordianSections} />;
+      return outlet === "main" ? (
+        <>
+          <h3>Tabs</h3>
+          <Tabs defaultValue="HTML" tabs={accordianSections} />
+        </>
+      ) : (
+        <TabsInfo />
+      );
     default:
       return <h1>NO COMPONENT SELECTED</h1>;
   }
