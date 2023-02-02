@@ -66,7 +66,7 @@ export default function Component({ componentId }: props) {
         <LikeButtonInfo />
       );
     case "tabs":
-      return <Tabs />;
+      return <Tabs defaultValue="HTML" tabs={accordianSections} />;
     default:
       return <h1>NO COMPONENT SELECTED</h1>;
   }
