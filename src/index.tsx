@@ -23,6 +23,10 @@ const router = createBrowserRouter([
         path: "button",
         element: <Component componentId="button" />,
       },
+      {
+        path: "tabs",
+        element: <Component componentId="tabs" />,
+      },
     ],
   },
 ]);

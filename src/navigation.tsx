@@ -21,6 +21,12 @@ export default function Navigation() {
       >
         Like Button
       </Link>
+      <Link
+        style={{ display: "inline-block", margin: "0 1rem 0.5rem" }}
+        to="tabs"
+      >
+        Tabs
+      </Link>
     </>
   );
 }
