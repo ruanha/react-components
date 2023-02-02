@@ -48,7 +48,7 @@ export default function LikeButton({
         {isLoading ? <SpinnerIcon /> : <HeartIcon />}{" "}
         {isLiked ? "Liked" : "Like"}
       </button>
-      {errorMessage && <p>{errorMessage}</p>}
+      {errorMessage && <p className="error-message">{errorMessage}</p>}
     </div>
   );
 }
