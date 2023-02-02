@@ -32,18 +32,18 @@ export default function Component({ componentId }: props) {
             style={{
               bar: {
                 background:
-                  "repeating-linear-gradient(45deg, #606dbc, #606dbc 10px, #465298 10px,#465298 20px)",
+                  "repeating-linear-gradient(45deg, var(--primary), var(--primary) 10px, var(--primary-shade-2) 10px,var(--primary-shade-2) 20px)",
                 color: "white",
               },
-              container: { backgroundColor: "lightblue" },
+              container: { backgroundColor: "var(--grey-lighter)" },
             }}
           />
           <ProgressBar
             percent={33}
             style={{
               bar: {
-                backgroundColor: "red",
-                color: "red",
+                backgroundColor: "var(--primary)",
+                color: "var(--primary)",
               },
               container: { border: "none", height: "5px" },
             }}
