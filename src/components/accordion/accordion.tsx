@@ -6,7 +6,7 @@ function Section({ title, text }: section) {
   const [isActive, setIsActive] = useState(false);
 
   return (
-    <div className="accordion-item" key={title}>
+    <div className="accordion-item">
       <div
         className="accordion-item-title"
         onClick={() => setIsActive(!isActive)}
@@ -26,7 +26,13 @@ export default function Accordion({ sections }: { sections: section[] }) {
   return (
     <div className="accordion">
       {sections.map((section) => {
-        return <Section title={section.title} text={section.text} />;
+        return (
+          <Section
+            title={section.title}
+            text={section.text}
+            key={section.title}
+          />
+        );
       })}
     </div>
   );
