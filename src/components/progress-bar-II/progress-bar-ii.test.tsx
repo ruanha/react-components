@@ -1,4 +1,4 @@
-import { render, screen } from "@testing-library/react";
+import { act, render, screen } from "@testing-library/react";
 
 import ProgressBar2 from "./progress-bar-ii";
 
@@ -7,5 +7,27 @@ describe("Rendering", () => {
     render(<ProgressBar2 />);
     const progress = screen.getByText("0%");
     expect(progress).toBeInTheDocument();
+  });
+  it("renders a start button", () => {
+    render(<ProgressBar2 />);
+    const button = screen.getByRole("button");
+    expect(button).toBeInTheDocument();
+  });
+});
+
+describe("Progress bar", () => {
+  it("increases the progress bar by 1% every 50ms", () => {
+    jest.useFakeTimers();
+    render(<ProgressBar2 />);
+    const button = screen.getByRole("button");
+    act(() => {
+      button.click();
+    });
+    expect(screen.getByText("0%")).toBeInTheDocument();
+    act(() => {
+      jest.advanceTimersByTime(50);
+    });
+
+    expect(screen.getByText(/^1%$/)).toBeInTheDocument();
   });
 });
