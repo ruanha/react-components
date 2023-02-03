@@ -49,4 +49,23 @@ describe("Progress bar", () => {
     });
     expect(screen.getByText("100%")).toBeInTheDocument();
   });
+  it("restarts the progress bar when the start button is clicked", () => {
+    jest.useFakeTimers();
+    render(<ProgressBar2 />);
+    const button = screen.getByRole("button");
+    act(() => {
+      button.click();
+    });
+    act(() => {
+      jest.advanceTimersByTime(5000);
+    });
+    expect(screen.getByText("100%")).toBeInTheDocument();
+    act(() => {
+      button.click();
+    });
+    act(() => {
+      jest.advanceTimersByTime(50);
+    });
+    expect(screen.getByText("0%")).toBeInTheDocument();
+  });
 });
