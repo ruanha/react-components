@@ -27,7 +27,26 @@ describe("Progress bar", () => {
     act(() => {
       jest.advanceTimersByTime(50);
     });
-
     expect(screen.getByText(/^1%$/)).toBeInTheDocument();
+    act(() => {
+      jest.advanceTimersByTime(50);
+    });
+    expect(screen.getByText(/^2%$/)).toBeInTheDocument();
+  });
+  it("stops increasing the progress bar when it reaches 100%", () => {
+    jest.useFakeTimers();
+    render(<ProgressBar2 />);
+    const button = screen.getByRole("button");
+    act(() => {
+      button.click();
+    });
+    act(() => {
+      jest.advanceTimersByTime(5000);
+    });
+    expect(screen.getByText("100%")).toBeInTheDocument();
+    act(() => {
+      jest.advanceTimersByTime(50);
+    });
+    expect(screen.getByText("100%")).toBeInTheDocument();
   });
 });

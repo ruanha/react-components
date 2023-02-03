@@ -7,6 +7,7 @@ import LikeButtonInfo from "./components-info/like-button";
 import { useOutletContext } from "react-router-dom";
 import Tabs from "./components/tabs/tabs";
 import TabsInfo from "./components-info/tabs";
+import ProgressBar2 from "./components/progress-bar-II/progress-bar-ii";
 
 export default function Component({ componentId }: props) {
   const outlet = useOutletContext();
@@ -21,6 +22,8 @@ export default function Component({ componentId }: props) {
     case "progress-bar":
       return outlet === "main" ? (
         <>
+          <h3>Progress Bar 2</h3>
+          <ProgressBar2 />
           <h3>Default style</h3>
           <ProgressBar percent={0} />
           <ProgressBar percent={1} />
