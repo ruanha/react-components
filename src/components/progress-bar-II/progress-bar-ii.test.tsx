@@ -63,9 +63,10 @@ describe("Progress bar", () => {
     act(() => {
       button.click();
     });
+    expect(screen.getByText("0%")).toBeInTheDocument();
     act(() => {
       jest.advanceTimersByTime(50);
     });
-    expect(screen.getByText("0%")).toBeInTheDocument();
+    expect(screen.getByText("1%")).toBeInTheDocument();
   });
 });

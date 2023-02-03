@@ -6,6 +6,7 @@ export default function ProgressBar2() {
   const [active, setActive] = useState(false);
 
   const start = () => {
+    setPercent(0);
     if (active) return;
     setActive(true);
     const interval = setInterval(() => {
