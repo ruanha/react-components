@@ -1,5 +1,6 @@
 import SyntaxHighlighter from "react-syntax-highlighter";
 import { dracula } from "react-syntax-highlighter/dist/esm/styles/hljs";
+import { Link } from "react-router-dom";
 
 import logo from "./github-mark.svg";
 
@@ -36,8 +37,8 @@ export default function ProgressBar2Info() {
       <h3>Notes</h3>
       <p>
         The Progress Bar 2, simply uses the{" "}
-        <a href="/react-components/progress-bar">Progress Bar</a> component, but
-        adds a start button that will start the progress bar or reset to 0.
+        <Link to="../progress-bar">Progress Bar</Link> component, but adds a
+        start button that will start the progress bar or reset to 0.
       </p>
     </div>
   );
