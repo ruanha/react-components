@@ -11,6 +11,12 @@ export default function Navigation() {
       </Link>
       <Link
         style={{ display: "inline-block", margin: "0 1rem 0.5rem" }}
+        to="progress-bar-ii"
+      >
+        Progress-Bar-II
+      </Link>
+      <Link
+        style={{ display: "inline-block", margin: "0 1rem 0.5rem" }}
         to="accordion"
       >
         Accordion

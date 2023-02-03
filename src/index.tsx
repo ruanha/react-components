@@ -16,6 +16,10 @@ const router = createBrowserRouter([
         element: <Component componentId="progress-bar" />,
       },
       {
+        path: "progress-bar-ii",
+        element: <Component componentId="progress-bar-ii" />,
+      },
+      {
         path: "accordion",
         element: <Component componentId="accordion" />,
       },
