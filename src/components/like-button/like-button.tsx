@@ -1,7 +1,7 @@
 import { HeartIcon, SpinnerIcon } from "./icons";
 import { useState } from "react";
 
-import "./like-button.css";
+import classes from "./like-button.module.css";
 
 export default function LikeButton({
   url,
@@ -20,7 +20,9 @@ export default function LikeButton({
     <div>
       <button
         disabled={isLoading}
-        className={isLiked ? "liked" : "default"}
+        className={`${classes.btn} ${
+          isLiked ? classes.liked : classes.deafult
+        }`}
         onClick={async () => {
           try {
             setIsLoading(true);
@@ -48,7 +50,9 @@ export default function LikeButton({
         {isLoading ? <SpinnerIcon /> : <HeartIcon />}{" "}
         {isLiked ? "Liked" : "Like"}
       </button>
-      {errorMessage && <p className="error-message">{errorMessage}</p>}
+      {errorMessage && (
+        <p className={classes["error-message"]}>{errorMessage}</p>
+      )}
     </div>
   );
 }

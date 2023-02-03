@@ -1,5 +1,5 @@
 import { CSSProperties } from "react";
-import "./progress-bar.css";
+import classes from "./progress-bar.module.css";
 
 export default function ProgressBar({ style, percent = 0 }: props) {
   percent = percent < 0 ? 0 : percent;
@@ -11,8 +11,11 @@ export default function ProgressBar({ style, percent = 0 }: props) {
   }
 
   return (
-    <div className="progress-bar" style={{ ...style?.container }}>
-      <div className="progress" style={{ ...style?.bar, width: `${percent}%` }}>
+    <div className={classes["progress-bar"]} style={{ ...style?.container }}>
+      <div
+        className={classes.progress}
+        style={{ ...style?.bar, width: `${percent}%` }}
+      >
         {percent.toFixed(0)}%
       </div>
     </div>

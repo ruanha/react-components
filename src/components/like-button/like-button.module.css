@@ -1,4 +1,4 @@
-button {
+.btn {
   background-color: #fff;
   border: 2px solid #888;
   border-radius: 2rem;
@@ -8,13 +8,13 @@ button {
   cursor: pointer;
 }
 
-button.liked {
+.liked {
   background-color: #f00;
   color: #fff;
   border: 2px solid #f00;
 }
 
-button.default:hover {
+.default:hover {
   border: 2px solid #f00;
   color: #f00;
 }

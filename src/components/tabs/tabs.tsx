@@ -1,5 +1,7 @@
 import { useState } from "react";
 
+import "./tabs.module.css";
+
 export default function Tabs({
   defaultValue,
   tabs,
@@ -15,7 +17,7 @@ export default function Tabs({
         {tabs.map((tab) => (
           <button
             id={tab.title}
-            className={activeTabId === tab.title ? "active" : ""}
+            className={`btn ${activeTabId === tab.title ? "active" : ""}`}
             key={tab.title}
             onClick={() => setActiveTabId(tab.title)}
           >

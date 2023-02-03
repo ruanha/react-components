@@ -1,30 +1,34 @@
 import { useState } from "react";
 
-import "./accordion.css";
+import classes from "./accordion.module.css";
 
 function Section({ title, text }: section) {
   const [isActive, setIsActive] = useState(false);
 
   return (
-    <div className="accordion-item">
+    <div className={classes["accordion-item"]}>
       <div
-        className="accordion-item-title"
+        className={classes["accordion-item-title"]}
         onClick={() => setIsActive(!isActive)}
       >
         {title}{" "}
         <span
           aria-hidden={true}
-          className={`accordion-icon ${isActive && "accordion-icon--rotated"}`}
+          className={`${classes["accordion-icon"]} ${
+            isActive && classes["accordion-icon--rotated"]
+          }`}
         />
       </div>
-      <div className="accordion-item-contents">{isActive && text}</div>
+      <div className={classes["accordion-item-contents"]}>
+        {isActive && text}
+      </div>
     </div>
   );
 }
 
 export default function Accordion({ sections }: { sections: section[] }) {
   return (
-    <div className="accordion">
+    <div className={classes["accordion"]}>
       {sections.map((section) => {
         return (
           <Section
