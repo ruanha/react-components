@@ -24,8 +24,8 @@ const router = createBrowserRouter([
         element: <Component componentId="accordion" />,
       },
       {
-        path: "button",
-        element: <Component componentId="button" />,
+        path: "like-button",
+        element: <Component componentId="like-button" />,
       },
       {
         path: "tabs",

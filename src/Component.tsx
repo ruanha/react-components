@@ -15,7 +15,7 @@ export default function Component({ componentId }: { componentId: string }) {
     case "progress-bar-ii":
       return <ProgressBar2 />;
 
-    case "button":
+    case "like-button":
       return (
         <>
           <LikeButton url="mock/api/like" requestApi={mockFetch} />
