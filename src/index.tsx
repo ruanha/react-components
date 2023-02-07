@@ -8,6 +8,32 @@ import Component from "./Component";
 
 const router = createBrowserRouter([
   {
+    path: "/",
+    element: <App />,
+    children: [
+      {
+        path: "progress-bar",
+        element: <Component componentId="progress-bar" />,
+      },
+      {
+        path: "progress-bar-ii",
+        element: <Component componentId="progress-bar-ii" />,
+      },
+      {
+        path: "accordion",
+        element: <Component componentId="accordion" />,
+      },
+      {
+        path: "like-button",
+        element: <Component componentId="like-button" />,
+      },
+      {
+        path: "tabs",
+        element: <Component componentId="tabs" />,
+      },
+    ],
+  },
+  {
     path: "/react-components",
     element: <App />,
     children: [
