@@ -7,7 +7,7 @@ import LikeButtonInfo from "./components-info/like-button";
 import { useOutletContext } from "react-router-dom";
 import Tabs from "./components/tabs/tabs";
 import TabsInfo from "./components-info/tabs";
-import ProgressBar2 from "./components/progress-bar-II/progress-bar-ii";
+import ProgressBar2 from "./components/progress-bar-ii/progress-bar-ii";
 import ProgressBar2Info from "./components-info/progress-bar-ii";
 
 export default function Component({ componentId }: props) {
