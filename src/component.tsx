@@ -1,92 +1,35 @@
 import Accordion from "./components/accordion/accordion";
-import AccordionInfo from "./components-info/accordion";
 import ProgressBar from "./components/progress-bar/progress-bar";
-import ProgressBarInfo from "./components-info/progress-bar";
 import LikeButton from "./components/like-button/like-button";
-import LikeButtonInfo from "./components-info/like-button";
-import { useOutletContext } from "react-router-dom";
 import Tabs from "./components/tabs/tabs";
-import TabsInfo from "./components-info/tabs";
 import ProgressBar2 from "./components/progress-bar-ii/progress-bar-ii";
-import ProgressBar2Info from "./components-info/progress-bar-ii";
 
-export default function Component({ componentId }: props) {
-  const outlet = useOutletContext();
-
+export default function Component({ componentId }: { componentId: string }) {
   switch (componentId) {
     case "accordion":
-      return outlet === "main" ? (
-        <Accordion sections={accordianSections} />
-      ) : (
-        <AccordionInfo />
-      );
+      return <Accordion sections={accordianSections} />;
+
     case "progress-bar":
-      return outlet === "main" ? (
-        <>
-          <h3>Default style</h3>
-          <ProgressBar percent={0} />
-          <ProgressBar percent={1} />
-          <ProgressBar percent={5} />
-          <ProgressBar percent={25} />
-          <ProgressBar percent={50} />
-          <ProgressBar percent={100} />
-          <h3>Custom style examples</h3>
-          <ProgressBar
-            percent={50}
-            style={{
-              bar: {
-                background:
-                  "repeating-linear-gradient(45deg, var(--primary), var(--primary) 10px, var(--primary-shade-2) 10px,var(--primary-shade-2) 20px)",
-                color: "white",
-              },
-              container: { backgroundColor: "var(--grey-lighter)" },
-            }}
-          />
-          <ProgressBar
-            percent={33}
-            style={{
-              bar: {
-                backgroundColor: "var(--primary)",
-                color: "var(--primary)",
-              },
-              container: { border: "none", height: "5px" },
-            }}
-          />
-        </>
-      ) : (
-        <ProgressBarInfo />
-      );
+      return <ProgressBar percent={25} />;
+
     case "progress-bar-ii":
-      return outlet === "main" ? <ProgressBar2 /> : <ProgressBar2Info />;
+      return <ProgressBar2 />;
+
     case "button":
-      return outlet === "main" ? (
+      return (
         <>
-          <h3>Like Button</h3>
-          <p>Try to hover and click the buttons</p>
           <LikeButton url="mock/api/like" requestApi={mockFetch} />
-          <h3>Connection/Server error</h3>
           <LikeButton url="mock/api/like" requestApi={mockFetchFail} />
         </>
-      ) : (
-        <LikeButtonInfo />
       );
+
     case "tabs":
-      return outlet === "main" ? (
-        <>
-          <h3>Tabs</h3>
-          <Tabs defaultValue="HTML" tabs={accordianSections} />
-        </>
-      ) : (
-        <TabsInfo />
-      );
+      return <Tabs defaultValue="HTML" tabs={accordianSections} />;
+
     default:
       return <h1>NO COMPONENT SELECTED</h1>;
   }
 }
-
-type props = {
-  componentId: string;
-};
 
 const accordianSections = [
   {

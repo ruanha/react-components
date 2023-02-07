@@ -1,7 +1,6 @@
 import { Outlet } from "react-router-dom";
 
 import "./App.css";
-import Navigation from "./navigation";
 
 function App() {
   return (
@@ -9,19 +8,10 @@ function App() {
       <header>
         <h1>React Components</h1>
       </header>
-      <div className="columns">
-        <nav>
-          <Navigation />
-        </nav>
-        <main>
-          <h2>COMPONENT</h2>
-          <Outlet context={"main"} />
-        </main>
-        <aside>
-          <h2>NOTES</h2>
-          <Outlet context={"aside"} />
-        </aside>
-      </div>
+      <main>
+        <h2>COMPONENT</h2>
+        <Outlet />
+      </main>
       <script src="src/index.js"></script>
     </div>
   );
