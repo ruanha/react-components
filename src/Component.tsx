@@ -5,6 +5,7 @@ import Tabs from "./components/tabs/tabs";
 import ProgressBar2 from "./components/progress-bar-ii/progress-bar-ii";
 
 export default function Component({ componentId }: { componentId: string }) {
+  console.log(componentId);
   switch (componentId) {
     case "accordion":
       return <Accordion sections={accordianSections} />;
