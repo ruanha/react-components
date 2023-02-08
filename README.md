@@ -2,11 +2,11 @@
 
 ## Overview
 
-- [Accordion](https://ruanha-react-components.netlify.app//accordion)
-- [Like-Button](https://ruanha-react-components.netlify.app//like-button)
-- [Progress-Bar](https://ruanha-react-components.netlify.app//progress-bar)
-- [Progress-Bar-2](https://ruanha-react-components.netlify.app//progress-bar-ii)
-- [Tabs](https://ruanha-react-components.netlify.app//tabs)
+- [Accordion](https://ruanha-react-components.netlify.app/accordion)
+- [Like-Button](https://ruanha-react-components.netlify.app/like-button)
+- [Progress-Bar](https://ruanha-react-components.netlify.app/progress-bar)
+- [Progress-Bar-2](https://ruanha-react-components.netlify.app/progress-bar-ii)
+- [Tabs](https://ruanha-react-components.netlify.app/tabs)
 
 ## Usefull Scripts
 
