@@ -3,6 +3,7 @@ import ProgressBar from "./components/progress-bar/progress-bar";
 import LikeButton from "./components/like-button/like-button";
 import Tabs from "./components/tabs/tabs";
 import ProgressBar2 from "./components/progress-bar-ii/progress-bar-ii";
+import NavbarLinks from "./components/navbar/NavbarLinks";
 
 export default function Component({ componentId }: { componentId: string }) {
   console.log(componentId);
@@ -26,6 +27,17 @@ export default function Component({ componentId }: { componentId: string }) {
 
     case "tabs":
       return <Tabs defaultValue="HTML" tabs={accordianSections} />;
+
+    case "navbar-links":
+      return (
+        <NavbarLinks
+          items={[
+            { title: "home", link: "#" },
+            { title: "contact", link: "#" },
+            { title: "about", link: "#" },
+          ]}
+        />
+      );
 
     default:
       return <h1>NO COMPONENT SELECTED</h1>;
