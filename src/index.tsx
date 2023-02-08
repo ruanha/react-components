@@ -9,7 +9,7 @@ import Component from "./Component";
 
 const router = createBrowserRouter([
   {
-    path: "/react-components",
+    path: "/",
     element: <App />,
     children: [
       {
