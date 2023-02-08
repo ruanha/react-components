@@ -12,10 +12,6 @@
 
 In the project directory, you can run:
 
-### `npm run deploy`
-
-Runs the deploy script that pushes to gh-pages branch.
-
 ### `npm start`
 
 Runs the app in the development mode.\
