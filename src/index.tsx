@@ -1,19 +1,47 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { BrowserRouter } from "react-router-dom";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
+import Component from "./Component";
+
+const router = createBrowserRouter([
+  {
+    path: "/react-components",
+    element: <App />,
+    children: [
+      {
+        path: "progress-bar",
+        element: <Component componentId="progress-bar" />,
+      },
+      {
+        path: "progress-bar-ii",
+        element: <Component componentId="progress-bar-ii" />,
+      },
+      {
+        path: "accordion",
+        element: <Component componentId="accordion" />,
+      },
+      {
+        path: "button",
+        element: <Component componentId="button" />,
+      },
+      {
+        path: "tabs",
+        element: <Component componentId="tabs" />,
+      },
+    ],
+  },
+]);
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
 );
 root.render(
   <React.StrictMode>
-    <BrowserRouter>
-      <App />
-    </BrowserRouter>
+    <RouterProvider router={router} />
   </React.StrictMode>
 );
 
