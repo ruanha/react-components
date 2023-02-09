@@ -6,7 +6,6 @@ import ProgressBar2 from "./components/progress-bar-ii/progress-bar-ii";
 import Navbar from "./components/navbar/navbar";
 
 export default function Component({ componentId }: { componentId: string }) {
-  console.log(componentId);
   switch (componentId) {
     case "accordion":
       return <Accordion sections={accordianSections} />;
