@@ -7,6 +7,7 @@
 - [Progress-Bar](https://ruanha-react-components.netlify.app/progress-bar)
 - [Progress-Bar-2](https://ruanha-react-components.netlify.app/progress-bar-ii)
 - [Tabs](https://ruanha-react-components.netlify.app/tabs)
+- [Navbar](https://ruanha-react-components.netlify.app/navbar)
 
 ## Usefull Scripts
 
