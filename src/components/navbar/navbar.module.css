@@ -1,5 +1,6 @@
 ul {
   display: flex;
+
   justify-content: space-between;
   margin: auto;
 }
@@ -7,13 +8,13 @@ ul {
 li {
   list-style: none;
   transition: transform 0.2s ease-in;
-  padding: 0.5rem;
 }
 
 a {
   text-decoration: none;
   color: #000;
   position: relative;
+  padding: 0.5rem 0.5rem 0 0.5rem;
 }
 
 a::after {
