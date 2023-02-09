@@ -1,0 +1,33 @@
+ul {
+  display: flex;
+  justify-content: space-between;
+  margin: auto;
+}
+
+li {
+  list-style: none;
+  transition: transform 0.2s ease-in;
+  padding: 0.5rem;
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+  position: relative;
+}
+
+a::after {
+  content: "";
+  background-color: #000;
+  height: 2px;
+  width: 100%;
+  position: absolute;
+  bottom: -5px;
+  left: 0px;
+  transform: scaleX(0);
+  transition: transform 0.2s ease-in;
+}
+
+a:hover::after {
+  transform: scaleX(1);
+}
