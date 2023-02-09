@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 import classes from "./navbar.module.css";
 
-export default function NavbarLinks({ items }: { items: item[] }) {
+export default function Navbar({ items }: { items: item[] }) {
   const links = items.map((item) => {
     return (
       <li key={item.title}>

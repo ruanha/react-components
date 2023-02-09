@@ -1,5 +1,5 @@
 import { cleanup, render, screen } from "@testing-library/react";
-import NavbarLinks from "./NavbarLinks";
+import Navbar from "./navbar";
 import { BrowserRouter } from "react-router-dom";
 
 // afterEach function runs after each test suite is executed
@@ -8,10 +8,10 @@ afterEach(() => {
 });
 
 describe("Navbar", () => {
-  it("renders NavbarLinks component", () => {
+  it("renders Navbar component", () => {
     render(
       <BrowserRouter>
-        <NavbarLinks items={items} />
+        <Navbar items={items} />
       </BrowserRouter>
     );
     const navbarItems = items.map((item) => screen.getByText(item.title));

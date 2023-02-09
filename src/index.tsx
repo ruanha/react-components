@@ -33,8 +33,8 @@ const router = createBrowserRouter([
         element: <Component componentId="tabs" />,
       },
       {
-        path: "navbar-links",
-        element: <Component componentId="navbar-links" />,
+        path: "navbar",
+        element: <Component componentId="navbar" />,
       },
     ],
   },

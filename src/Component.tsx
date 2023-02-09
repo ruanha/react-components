@@ -3,7 +3,7 @@ import ProgressBar from "./components/progress-bar/progress-bar";
 import LikeButton from "./components/like-button/like-button";
 import Tabs from "./components/tabs/tabs";
 import ProgressBar2 from "./components/progress-bar-ii/progress-bar-ii";
-import NavbarLinks from "./components/navbar/NavbarLinks";
+import Navbar from "./components/navbar/navbar";
 
 export default function Component({ componentId }: { componentId: string }) {
   console.log(componentId);
@@ -28,9 +28,9 @@ export default function Component({ componentId }: { componentId: string }) {
     case "tabs":
       return <Tabs defaultValue="HTML" tabs={accordianSections} />;
 
-    case "navbar-links":
+    case "navbar":
       return (
-        <NavbarLinks
+        <Navbar
           items={[
             { title: "home", link: "#" },
             { title: "contact", link: "#" },
