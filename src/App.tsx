@@ -9,7 +9,6 @@ function App() {
         <h1>React Components</h1>
       </header>
       <main>
-        <h2>COMPONENT</h2>
         <Outlet />
       </main>
       <script src="src/index.js"></script>

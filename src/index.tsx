@@ -14,27 +14,39 @@ const router = createBrowserRouter([
     children: [
       {
         path: "progress-bar",
-        element: <Component componentId="progress-bar" />,
+        element: (
+          <Component
+            component={{ id: "progress-bar", title: "Progress Bar" }}
+          />
+        ),
       },
       {
         path: "progress-bar-ii",
-        element: <Component componentId="progress-bar-ii" />,
+        element: (
+          <Component
+            component={{ id: "progress-bar-ii", title: "Progress Bar II" }}
+          />
+        ),
       },
       {
         path: "accordion",
-        element: <Component componentId="accordion" />,
+        element: (
+          <Component component={{ id: "accordion", title: "Accordion" }} />
+        ),
       },
       {
         path: "button",
-        element: <Component componentId="button" />,
+        element: (
+          <Component component={{ id: "button", title: "Like Button" }} />
+        ),
       },
       {
         path: "tabs",
-        element: <Component componentId="tabs" />,
+        element: <Component component={{ id: "tabs", title: "Tabs" }} />,
       },
       {
         path: "navbar",
-        element: <Component componentId="navbar" />,
+        element: <Component component={{ id: "navbar", title: "Navbar" }} />,
       },
     ],
   },

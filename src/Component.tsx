@@ -5,30 +5,40 @@ import Tabs from "./components/tabs/tabs";
 import ProgressBar2 from "./components/progress-bar-ii/progress-bar-ii";
 import Navbar from "./components/navbar/navbar";
 
-export default function Component({ componentId }: { componentId: string }) {
-  switch (componentId) {
+export default function Component({
+  component,
+}: {
+  component: { id: string; title: string };
+}) {
+  let componentEl;
+  switch (component.id) {
     case "accordion":
-      return <Accordion sections={accordianSections} />;
+      componentEl = <Accordion sections={accordianSections} />;
+      break;
 
     case "progress-bar":
-      return <ProgressBar percent={25} />;
+      componentEl = <ProgressBar percent={25} />;
+      break;
 
     case "progress-bar-ii":
-      return <ProgressBar2 />;
+      componentEl = <ProgressBar2 />;
+      break;
 
     case "like-button":
-      return (
+      componentEl = (
         <>
           <LikeButton url="mock/api/like" requestApi={mockFetch} />
           <LikeButton url="mock/api/like" requestApi={mockFetchFail} />
         </>
       );
+      break;
 
     case "tabs":
-      return <Tabs defaultValue="HTML" tabs={accordianSections} />;
+      componentEl = <Tabs defaultValue="HTML" tabs={accordianSections} />;
+      break;
 
     case "navbar":
-      return (
+      componentEl = (
         <Navbar
           items={[
             { title: "home", link: "#" },
@@ -37,10 +47,17 @@ export default function Component({ componentId }: { componentId: string }) {
           ]}
         />
       );
+      break;
 
     default:
       return <h1>NO COMPONENT SELECTED</h1>;
   }
+  return (
+    <div className="component">
+      <h2>{component.title}</h2>
+      {componentEl}
+    </div>
+  );
 }
 
 const accordianSections = [
